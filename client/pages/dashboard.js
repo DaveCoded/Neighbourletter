@@ -28,7 +28,7 @@ export default function Dashboard() {
     return (
         <main className={styles.main}>
             <section className={styles.submissionsList}>
-                <h2>Community Submissions</h2>
+                <h2 className={styles.sectionHeader}>Community Submissions</h2>
                 <SubmissionList submissions={submissions} />
             </section>
             <section>
