@@ -1,0 +1,20 @@
+.main {
+  padding: 1.6rem;
+  border: 1px solid rgb(226, 225, 225);
+  background: white;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: var(--font-lg);
+  margin: 0;
+}
+
+.issueHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 1rem 0;
+}

@@ -29,17 +29,18 @@
 
 :root {
   --primary-color: #f06060;
-  --primary-color-light: #f0606034;
+  --primary-color-light: #f0606025;
+  --primary-color-dark: #e45252;
   --secondary-color: #492c4e;
   --tertiary-color: #b093b5;
   --quat-color: #5fb3b9;
-  --quat-color-light: #5fb3b960;
+  --quat-color-light: #5fb3b944;
   --quat-color-dark: #368288;
   --background-color: #eeecec;
   --gray-900: #1a202b;
   --gray-800: #2d3748;
   --gray-700: #4a5568;
-  --gray-600: #718096;
+  --gray-600: #546072;
   --gray-500: #cbd5e0;
   --gray-400: #e2e8f0;
   --gray-300: #f6f7f8;
@@ -103,7 +104,7 @@ button.danger {
 button.success {
   border: 1px solid var(--quat-color);
   background: white;
-  color: var(--gray-800);
+  color: var(--quat-color-dark);
 }
 
 button.success:hover {
@@ -113,6 +114,6 @@ button.success:hover {
 
 button.danger:hover {
   background: var(--primary-color-light);
-  border: 1px solid var(--primary-color);
-  color: var(--gray-800);
+  border: 1px solid var(--primary-color-light);
+  color: var(--primary-color-dark);
 }

@@ -32,10 +32,11 @@
   display: flex;
   grid-gap: 0.25rem;
   align-items: center;
+  color: var(--gray-700);
 }
 
 .description {
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.75rem 0;
   line-height: 150%;
   font-size: var(--font-base);
 }
@@ -50,6 +51,6 @@
 .submitter {
   margin-right: auto;
   font-weight: medium;
-  color: var(--gray-700);
-  font-size: var(--font-base);
+  color: var(--gray-600);
+  font-size: var(--font-sm);
 }

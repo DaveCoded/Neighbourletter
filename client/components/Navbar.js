@@ -1,10 +1,15 @@
 import React from 'react';
 import styles from '../styles/Navbar.module.css';
+import { Mail } from 'react-feather';
 
 export default function Navbar() {
   return (
     <nav className={styles.main}>
-      <p>NeighbourLetter</p>
+      <p className={styles.logo}>
+        <Mail size={16} color="var(--primary-color-dark)" />
+        NeighbourLetter
+      </p>
+      <p className={styles.newsletterName}>NW4 Newsletter</p>
       <div className={styles.profile}>
         <img
           className={styles.profileImage}
