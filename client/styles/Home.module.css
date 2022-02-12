@@ -1,5 +1,8 @@
 .container {
   padding: 0 2rem;
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .main {
@@ -42,7 +45,19 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: var(--font-5xl);
+  font-weight: bold;
+  letter-spacing: -0.1rem;
+  font-family: "Open Sauce Sans";
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+  }
+  .title {
+    font-size: var(--font-3xl);
+  }
 }
 
 .title,
