@@ -10,8 +10,8 @@ export default function SubmissionList({ submissions }) {
             <p className={styles.description}>{sub.description}</p>
             <div className={styles.actions}>
                 <span className={styles.submitter}>{sub.submitter}</span>
-                <button>Approve</button>
-                <button>Reject</button>
+                <button className="success">Approve</button>
+                <button className="danger">Reject</button>
             </div>
         </div>
     ))
