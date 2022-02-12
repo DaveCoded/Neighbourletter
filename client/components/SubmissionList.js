@@ -9,7 +9,7 @@ export default function SubmissionList({ submissions }) {
             <h3 className={styles.title}>{sub.title}</h3>
             <p className={styles.description}>{sub.description}</p>
             <div className={styles.actions}>
-                <span className={styles.submitter}>{sub.submitter}</span>
+                <span className={styles.submitter}>Submitted by {sub.submitter}</span>
                 <button className="success">Approve</button>
                 <button className="danger">Reject</button>
             </div>

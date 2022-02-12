@@ -1,3 +1,4 @@
+
 .submission {
     padding: 1.6rem;
     border: 1px solid rgb(226, 225, 225);
@@ -8,7 +9,7 @@
 }
 
 .category {
-    margin: 0 0 0.8rem 0;
+    margin: 0 0 1.25rem 0;
     font-weight: normal;
     color: var(--gray-700);
     font-size: var(--font-sm);
@@ -17,7 +18,7 @@
 }
 
 .title {
-    margin: 0 0 1.25rem 0;
+    margin: 0 0 0.5rem 0;
     font-size: var(--font-lg);
     color: var(--gray-800);
 }
@@ -31,6 +32,8 @@
 .actions {
     display: flex;
     grid-gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .submitter {
