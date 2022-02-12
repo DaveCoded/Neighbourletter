@@ -1,0 +1,24 @@
+.submission {
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.category {
+    margin-top: 0;
+}
+
+.title {
+
+}
+
+.description {
+    
+}
+
+.actions {
+    display: flex;
+}
+
+.submitter {
+    margin-right: auto;
+}

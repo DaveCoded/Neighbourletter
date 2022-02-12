@@ -1,11 +1,12 @@
 import React from 'react';
+import styles from '../styles/Footer.module.css';
 
 export default function Footer() {
     const year = new Date().getFullYear();
 
     return (
-        <footer>
-        &copy; {year} NeighbourLetter
+        <footer className={styles.footer}>
+            &copy; {year} NeighbourLetter
         </footer>
     );
 }
