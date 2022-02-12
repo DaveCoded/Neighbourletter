@@ -31,6 +31,7 @@
   --primary-color: #f06060;
   --secondary-color: #492c4e;
   --tertiary-color: #b093b5;
+  --quat-color: #5fb3b9;
   --background-color: #eeecec;
   --gray-900: #1a202b;
   --gray-800: #2d3748;
@@ -38,6 +39,7 @@
   --gray-600: #718096;
   --gray-500: #cbd5e0;
   --gray-400: #e2e8f0;
+  --gray-300: #f6f7f8;
   --font-5xl: 7.478rem;
   --font-4xl: 5.61rem;
   --font-3xl: 4.209rem;
@@ -67,4 +69,31 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+button {
+  padding: 0.5rem 0.75rem;
+  font-size: var(--font-base);
+  font-weight: 600;
+  border: 1px solid var(--gray-500);
+  border-radius: 0.25rem;
+  background: var(--gray-300);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  color: var(--gray-700);
+}
+
+button:hover {
+  background: var(--gray-400);
+  color: var(--gray-900);
+}
+
+button.success:hover {
+  background: var(--quat-color);
+  border: 1px solid var(--quat-color);
+}
+
+button.danger:hover {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
 }

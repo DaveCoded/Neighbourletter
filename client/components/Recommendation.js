@@ -8,9 +8,9 @@ export default function Recommendation({ name, description, location, submitter 
             <p>{location}</p>
             <p className={styles.description}>{description}</p>
             <div className={styles.actions}>
-                <span className={styles.submitter}>{submitter}</span>
-                <button>Approve</button>
-                <button>Reject</button>
+                <span className={styles.submitter}>Submitted by {submitter}</span>
+                <button className="success">Approve</button>
+                <button className="danger">Reject</button>
             </div>
         </div>
     )

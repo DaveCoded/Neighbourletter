@@ -8,9 +8,9 @@ export default function Event({ title, description, submitter }) {
             <h3 className={styles.title}>{title}</h3>
             <p className={styles.description}>{description}</p>
             <div className={styles.actions}>
-                <span className={styles.submitter}>{submitter}</span>
-                <button>Approve</button>
-                <button>Reject</button>
+                <span className={styles.submitter}>Submitted by {submitter}</span>
+                <button className="success">Approve</button>
+                <button className="danger">Reject</button>
             </div>
         </div>
     )

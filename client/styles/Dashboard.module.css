@@ -3,5 +3,8 @@
 }
 
 .submissionsList {
-    max-width: 500px;
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
 }
