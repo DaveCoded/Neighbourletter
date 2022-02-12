@@ -1,5 +1,7 @@
 .main {
-    margin: 4rem;
+    margin: 4rem auto;
+    max-width: 1300px;
+    padding: 0 2rem;
 }
 
 .submissionsList {

@@ -73,9 +73,8 @@ a {
 
 button {
   padding: 0.5rem 0.75rem;
-  font-family: "Open Sauce Two";
   font-size: var(--font-base);
-  font-weight: medium;
+  font-weight: 600;
   border: 1px solid var(--gray-500);
   border-radius: 0.25rem;
   background: var(--gray-300);
