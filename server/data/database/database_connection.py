@@ -18,4 +18,3 @@ def getConnection():
         _setupConnection()
 
     return SQL_CONNECTION
-

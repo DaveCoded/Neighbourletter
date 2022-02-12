@@ -16,7 +16,43 @@ def get_submissions(request):
     except HttpException as exc:
         return exc.GetResponse()
 
+def Create(request):
+    """
+    @params: logintoken, name, short_desc
+    """
+    requestJSON = request.get_json(silent=True)
+    try:
+        assertJSON(requestJSON, ['logintoken', 'name', 'short_desc'])
+        BlogPost.InputRuleSet.validateFromPropertyNames(['name', 'short_desc'], requestJSON)
+        
+        with SessionHandler.app_and_db_session_scope(requestJSON['logintoken'], SessionHandler.PermissionLevel.NONE) as session:
+            addedPost = BlogPost.Create(
+                db_session=session.db_session, 
+                name=requestJSON['name'],
+                short_desc=requestJSON['short_desc'],
+                content=requestJSON['content']
+            ) # TODO => finish assiging all properties to a blog post object
+            return SessionHandler.OK(addedPost.toJSONObject())
+    except HttpException as exc:
+        return exc.GetResponse()
+
 def create_submission(request):
     """
-    @params: 
+    @params: submitter_email, content, status, newsletter_id
     """
+    requestJSON = request.get_json(silent=True)
+    try:
+        assertJSON(requestJSON, ['submitter_email', 'content', 'status', 'newsletter_id'])
+        submission_created = data_functions.createSubmission(
+            requestJSON['submitter_email'], 
+            requestJSON['content'], 
+            requestJSON['status'], 
+            requestJSON['newsletter_id']
+        )
+
+        if submission_created:
+            return HttpException.OK()
+        else:
+            return HttpException(HttpErrorType.GenericError, 'Creating a submission', 'Failed to create it my dood.')
+    except HttpException as exc:
+        return exc.GetResponse()

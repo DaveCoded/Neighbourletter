@@ -11,6 +11,10 @@ def assertJSON(json, requiredKeys):
             raise HttpException(HttpErrorType.BadJSON)
     return True
 
+def OK(json_data={}):
+    json_data['success'] = True
+    return json.dumps(json_data), 200, {'ContentType':'application/json'}
+
 class HttpErrorType(Enum):
     Unauthorized = {
         'code': 401,
