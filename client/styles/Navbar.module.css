@@ -8,11 +8,24 @@
   margin: 0 auto;
 }
 
+.newsletterName {
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
 .profile {
   display: flex;
   grid-gap: 0.75rem;
   align-items: center;
   color: var(--gray-700);
+}
+
+.logo {
+  display: flex;
+  grid-gap: 0.5rem;
+  align-items: center;
+  font-weight: 800;
+  color: var(--primary-color-dark);
 }
 
 .profileImage {
