@@ -41,16 +41,6 @@
             "status": "pending"
         },
         {
-            "id": 4,
-            "category": "event",
-            "title": "Village fete",
-            "time": "15:00, 01/03/22",
-            "location": "Taffeta Farmhouse (where the pig pen used to be)",
-            "description": "We're hiring a pizza van, some carnival games and setting up some hay bales round our beautiful fire pits. Family friendly. Mulled wine for adults, soft drinks for the kiddies!",
-            "submitter": "Farmer John",
-            "status": "pending"
-        },
-        {
             "id": 5,
             "category": "event",
             "title": "Village fete",
@@ -62,6 +52,16 @@
         },
         {
             "id": 6,
+            "category": "event",
+            "title": "Village fete",
+            "time": "15:00, 01/03/22",
+            "location": "Taffeta Farmhouse (where the pig pen used to be)",
+            "description": "We're hiring a pizza van, some carnival games and setting up some hay bales round our beautiful fire pits. Family friendly. Mulled wine for adults, soft drinks for the kiddies!",
+            "submitter": "Farmer John",
+            "status": "pending"
+        },
+        {
+            "id": 7,
             "category": "recommendation",
             "name": "Mama Rose's Cafe",
             "location": "123 Fake Street",

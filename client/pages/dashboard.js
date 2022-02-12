@@ -27,10 +27,32 @@ export default function Dashboard() {
     const pendingSubmissions = submissions.filter(sub => sub.status === 'pending');
 
     const changeStatus = (submissionId, newStatus) => {
-        // const data = parse(allData);
-        // const submission = data.submissions.find(sub => sub.id === submissionId);
-        // submission.status = newStatus;
-        allData.submissions.find(sub => sub.id === submissionId).status = newStatus;
+        console.log("changeStatus", submissionId, newStatus);
+    }
+
+    const postSubmission = async () => {
+        await fetch('http://192.168.1.154:5000/submissions/create', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(
+                {
+                    content: {
+                        "category": "event",
+                        "title": "Village fete",
+                        "time": "15:00, 01/03/22",
+                        "location": "Taffeta Farmhouse (where the pig pen used to be)",
+                        "description": "We're hiring a pizza van, some carnival games and setting up some hay bales round our beautiful fire pits. Family friendly. Mulled wine for adults, soft drinks for the kiddies!",
+                        "submitter": "Farmer John"
+                    },
+                    submitter_email: "fake@fake.com",
+                    status: 0,
+                    newsletter_id: 1
+                }
+            )
+        })
     }
 
     return (
@@ -54,6 +76,9 @@ export default function Dashboard() {
                     <p>{numRecommendations} Recommendations</p>
                 </div>
             </section>
+            <button onClick={postSubmission}>
+                Post submission
+            </button>
         </main>
     )
 }
