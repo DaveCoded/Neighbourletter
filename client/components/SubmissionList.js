@@ -2,13 +2,13 @@ import React from 'react'
 import Event from '../components/Event'
 import Recommendation from '../components/Recommendation'
 
-export default function SubmissionList({ submissions }) {
+export default function SubmissionList({ submissions, changeStatus }) {
     return submissions.map((sub, index) => {
         switch (sub.category) {
             case 'event':
-                return <Event key={index} title={sub.title} description={sub.description} submitter={sub.submitter} />
+                return <Event key={index} title={sub.title} description={sub.description} submitter={sub.submitter} changeStatus={changeStatus} id={sub.id} />
             case 'recommendation':
-                return <Recommendation key={index} name={sub.name} description={sub.description} location={sub.location} submitter={sub.submitter} />
+                return <Recommendation key={index} name={sub.name} description={sub.description} location={sub.location} submitter={sub.submitter} changeStatus={changeStatus} id={sub.id} />
             default:
                 return null
         }
