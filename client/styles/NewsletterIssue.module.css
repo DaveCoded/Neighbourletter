@@ -5,16 +5,35 @@
   border-radius: 4px;
   display: flex;
   flex-direction: column;
+  border-radius: 8px;
+  border-top: 12px solid var(--quat-color);
 }
 
 .title {
   font-size: var(--font-lg);
   margin: 0;
+  color: var(--gray-700);
 }
 
 .issueHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.15rem 0;
+}
+
+.status {
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: var(--font-sm);
+  color: var(--gray-700);
+}
+
+.scheduleTime {
+  color: var(--gray-700);
+}
+
+.listings {
+  color: var(--gray-700);
+  margin: 1rem 0 0 0;
 }

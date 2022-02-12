@@ -13,7 +13,7 @@ export default function Navbar() {
       <div className={styles.profile}>
         <img
           className={styles.profileImage}
-          src="http://via.placeholder.com/30x30"
+          src="/images/fish-profile.jpeg"
           alt="profile"
           width="30px"
           height="30px"
