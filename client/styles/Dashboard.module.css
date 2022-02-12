@@ -1,12 +1,19 @@
 .main {
-    margin: 4rem auto;
-    max-width: 1300px;
-    padding: 0 2rem;
+  margin: 4rem auto;
+  max-width: 1300px;
+  padding: 0 2rem;
+}
+
+.sectionHeader {
+  margin: 0 0 0.25rem 0;
+  font-size: var(--font-md);
+  color: var(--gray-800);
+  font-weight: 400;
 }
 
 .submissionsList {
-    max-width: 680px;
-    display: flex;
-    flex-direction: column;
-    grid-gap: 1rem;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1rem;
 }
