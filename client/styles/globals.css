@@ -1,27 +1,27 @@
 @font-face {
-  font-family: "OpenSauceTwo";
-  src: url("/fonts/OpenSauce/OpenSauceTwo-Regular.ttf");
+  font-family: 'OpenSauceTwo';
+  src: url('/fonts/OpenSauce/OpenSauceTwo-Regular.ttf');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
-  font-family: "OpenSauceTwo";
-  src: url("/fonts/OpenSauce/OpenSauceTwo-Medium.ttf");
+  font-family: 'OpenSauceTwo';
+  src: url('/fonts/OpenSauce/OpenSauceTwo-Medium.ttf');
   font-style: medium;
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
-  font-family: "OpenSauceTwo";
-  src: url("/fonts/OpenSauce/OpenSauceTwo-ExtraBold.ttf");
+  font-family: 'OpenSauceTwo';
+  src: url('/fonts/OpenSauce/OpenSauceTwo-ExtraBold.ttf');
   font-style: bold;
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
-  font-family: "OpenSauceSans";
-  src: url("/fonts/OpenSauce/OpenSauceSans-ExtraBold.ttf");
+  font-family: 'OpenSauceSans';
+  src: url('/fonts/OpenSauce/OpenSauceSans-ExtraBold.ttf');
   font-style: bold;
   font-weight: 400;
   font-display: swap;
@@ -29,9 +29,12 @@
 
 :root {
   --primary-color: #f06060;
+  --primary-color-light: #f0606034;
   --secondary-color: #492c4e;
   --tertiary-color: #b093b5;
   --quat-color: #5fb3b9;
+  --quat-color-light: #5fb3b960;
+  --quat-color-dark: #368288;
   --background-color: #eeecec;
   --gray-900: #1a202b;
   --gray-800: #2d3748;
@@ -55,7 +58,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Open Sauce Two", -apple-system, BlinkMacSystemFont, Segoe UI,
+  font-family: 'Open Sauce Two', -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
   background-color: var(--background-color);
@@ -73,15 +76,17 @@ a {
 
 button {
   padding: 0.5rem 0.75rem;
-  font-family: "Open Sauce Two";
   font-size: var(--font-base);
-  font-weight: medium;
+  font-weight: 500;
   border: 1px solid var(--gray-500);
   border-radius: 0.25rem;
   background: var(--gray-300);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   color: var(--gray-700);
+  display: flex;
+  grid-gap: 0.5rem;
+  align-items: center;
 }
 
 button:hover {
@@ -89,13 +94,25 @@ button:hover {
   color: var(--gray-900);
 }
 
+button.danger {
+  border: 1px solid hsla(90, 90%, 90%, 0.1);
+  background: white;
+  color: var(--gray-600);
+}
+
+button.success {
+  border: 1px solid var(--quat-color);
+  background: white;
+  color: var(--gray-800);
+}
+
 button.success:hover {
-  background: var(--quat-color);
+  background: var(--quat-color-light);
   border: 1px solid var(--quat-color);
 }
 
 button.danger:hover {
-  background: var(--primary-color);
+  background: var(--primary-color-light);
   border: 1px solid var(--primary-color);
-
+  color: var(--gray-800);
 }
