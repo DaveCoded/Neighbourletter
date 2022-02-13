@@ -15,23 +15,33 @@ export default function NewsletterIssue({
                 <h3 className={styles.title}>Issue 4</h3>
                 <button>
                     <Link href="/newsletter">
-                        <a>
-                            Review
+                        <a style={{ display: 'flex', alignItems: 'center' }}>
+                            <span style={{ marginRight: 4 }}>Review</span>
                             <Eye size={16} />
                         </a>
                     </Link>
                 </button>
             </div>
-            <p className={styles.scheduleTime}>
-                {scheduledTime ? scheduledTime : 'Not yet scheduled'}
-            </p>
-            <p className={styles.status}>{status}</p>
-            <div className={styles.upcomingIssue}>
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    marginBottom: '0.75rem',
+                }}
+            >
+                <p className={styles.status}>Status: pending</p>
+                <p className={styles.scheduleTime}>{scheduledTime}</p>
+            </div>
+            <div
+                style={{ width: '100%', background: 'var(--gray-400)', height: '1px' }}
+            />
+            <div className={styles.listings}>
                 {/* num of events */}
                 <p>{numEvents} Events</p>
                 {/* num of recommendations */}
                 <p>{numRecommendations} Recommendations</p>
             </div>
-        </div>
+        </div >
     );
 }
