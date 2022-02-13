@@ -1,7 +1,12 @@
-import allData from '../dummy-data.json';
+// import allData from '../dummy-data.json';
+import { useState } from 'react'
+import { dummyData } from '../dummydata.js';
 import SubmissionList from '../components/SubmissionList';
 import styles from '../styles/Dashboard.module.css';
 import NewsletterIssue from '../components/NewsletterIssue';
+
+// Port 5000 on Filip's IP
+export const BASE_URL = 'http://192.168.1.154:5000';
 
 const getSubmissionCounts = (submissions) => {
     const counts = {
@@ -22,19 +27,31 @@ const getSubmissionCounts = (submissions) => {
 };
 
 export default function Dashboard() {
-    // fetch all submissions and filter to show pending submissions
-    const { submissions, newsletter } = allData;
+    const { newsletter } = dummyData;
+    // Put dummy submissions in state for now. Fetch from database later
+    const [submissions, setSubmissions] = useState(dummyData.submissions);
     const { numEvents, numRecommendations } = getSubmissionCounts(submissions);
+
+    // Only show pending submissions (not approved, or rejected) in dashboard list
     const pendingSubmissions = submissions.filter(
         (sub) => sub.status === 'pending'
     );
 
+    // Change status of a submission to approved or rejected
     const changeStatus = (submissionId, newStatus) => {
-        console.log("changeStatus", submissionId, newStatus);
+        let subs = [...submissions];
+        const subIndex = dummyData.submissions.findIndex(
+            (sub) => sub.id === submissionId
+        );
+        let subToChange = { ...subs[subIndex] };
+        subToChange.status = newStatus;
+        subs[subIndex] = subToChange;
+        setSubmissions(subs);
     }
 
+    // For testing that we can hit Filip's endpoint
     const postSubmission = async () => {
-        await fetch('http://192.168.1.154:5000/submissions/create', {
+        await fetch(`${BASE_URL}/submissions/create`, {
             method: 'POST',
             mode: 'no-cors',
             headers: {
@@ -63,14 +80,15 @@ export default function Dashboard() {
             <section className={styles.mainSection}>
                 <h2 className={styles.sectionHeader}>Community Submissions</h2>
                 <SubmissionList submissions={pendingSubmissions} changeStatus={changeStatus} />
+                {/* TODO: Button for testing Filip's backend. Delete before demo */}
+                <button onClick={postSubmission}>
+                    Post submission
+                </button>
             </section>
             <section className={styles.mainSection}>
                 <h2 className={styles.sectionHeader}>Upcoming Issue</h2>
-                <NewsletterIssue newsletter={newsletter} />
+                <NewsletterIssue newsletter={newsletter} numEvents={numEvents} numRecommendations={numRecommendations} />
             </section>
-            <button onClick={postSubmission}>
-                Post submission
-            </button>
         </main>
     )
 }
