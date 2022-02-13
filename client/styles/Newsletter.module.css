@@ -31,3 +31,8 @@
     border-radius: 4px;
     padding: 3rem 4rem;
 }
+
+.categoryHeading {
+    font-size: var(--font-xl);
+    margin-bottom: 0;
+}

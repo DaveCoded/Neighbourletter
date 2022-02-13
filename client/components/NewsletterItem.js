@@ -6,20 +6,18 @@ export default function NewsletterItem({ submission }) {
     if (submission.category === 'recommendation') {
         return (
             <article className={styles.article}>
-                <h4>{submission.category}</h4>
-                <h3>{submission.title}</h3>
-                <p>{submission.location}</p>
-                <p>{submission.description}</p>
+                <h3 className={styles.articleTitle} style={{ marginBottom: '0px' }}>{submission.title}</h3>
+                <p style={{ color: 'var(--gray-600)' }}>{submission.location}</p>
+                <p style={{ color: 'var(--gray-800)' }}>{submission.description}</p>
             </article>
         )
     } else {
         return (
             <article className={styles.article}>
-                <h4>{submission.category}</h4>
-                <h3>{submission.title}</h3>
-                <p>{submission.description}</p>
+                <h3 className={styles.articleTitle}>{submission.title}</h3>
+                <p style={{ color: 'var(--gray-800)' }}>{submission.description}</p>
                 <div>
-                    <p><strong>Where?</strong> {submission.location}</p>
+                    <p style={{ color: 'var(--gray-600)' }}><strong>Where?</strong> {submission.location}</p>
                 </div>
             </article>
         );

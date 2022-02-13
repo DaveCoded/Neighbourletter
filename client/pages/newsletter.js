@@ -52,7 +52,7 @@ export default function Newsletter() {
                 <hr style={{ marginTop: '3rem' }}></hr>
                 {sortSubmissions(submissions).map((category) => (
                     <>
-                        <h2 key={category[0] && category[0].category}>
+                        <h2 key={category[0] && category[0].category} className={styles.categoryHeading}>
                             {category[0] && category[0].category === 'recommendation' ? 'Recommendations' : 'Events'}
                         </h2>
                         {

@@ -10,3 +10,8 @@
 .article p {
     max-width: 65ch;
 }
+
+.articleTitle {
+    font-size: var(--font-lg);
+    margin-top: 0.5rem;
+}
