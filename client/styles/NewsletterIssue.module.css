@@ -37,3 +37,8 @@
   color: var(--gray-700);
   margin: 1rem 0 0 0;
 }
+
+.listings p {
+  margin: 0.5rem;
+  font-size: var(--font-md);
+}

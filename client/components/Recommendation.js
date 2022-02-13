@@ -26,15 +26,15 @@ export default function Recommendation({
       <p className={styles.description}>{description}</p>
       <div className={styles.actions}>
         <span className={styles.submitter}>Submitted by {submitter}</span>
+        <button className="danger" onClick={() => changeStatus(id, 1)}>
+          Reject
+        </button>
         <button className="warn">
           <Flag color="var(--gray-600)" size={14} />
           Flag
         </button>
-        <button className="danger" onClick={() => changeStatus(id, 1)}>
-          Reject
-        </button>
         <button className="success" onClick={() => changeStatus(id, 2)}>
-          Approve <Check color="var(--quat-color-dark)" size={16} />
+          <Check color="var(--quat-color-dark)" size={16} /> Approve
         </button>
       </div>
     </div>
