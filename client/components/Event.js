@@ -14,8 +14,8 @@ export default function Event({ title, description, submitter, changeStatus, id 
             <p className={styles.description}>{description}</p>
             <div className={styles.actions}>
                 <span className={styles.submitter}>Submitted by {submitter}</span>
-                <button className="danger" onClick={() => changeStatus(id, 'rejected')}>Reject</button>
-                <button className="success" onClick={() => changeStatus(id, 'approved')}>
+                <button className="danger" onClick={() => changeStatus(id, 1)}>Reject</button>
+                <button className="success" onClick={() => changeStatus(id, 2)}>
                     Approve <Check color="var(--quat-color-dark)" size={16} />
                 </button>
             </div>

@@ -5,7 +5,7 @@ import { Check } from 'react-feather';
 
 export default function Recommendation({
     id,
-    name,
+    title,
     description,
     location,
     submitter,
@@ -17,7 +17,7 @@ export default function Recommendation({
                 <Gift color="var(--gray-600)" size={14} />
                 Recommendation
             </h4>
-            <h3 className={styles.title}>{name}</h3>
+            <h3 className={styles.title}>{title}</h3>
             <p className={styles.location}>
                 <MapPin color="var(--gray-600)" size={16} />
                 {location}
@@ -25,8 +25,8 @@ export default function Recommendation({
             <p className={styles.description}>{description}</p>
             <div className={styles.actions}>
                 <span className={styles.submitter}>Submitted by {submitter}</span>
-                <button className="danger" onClick={() => changeStatus(id, 'rejected')}>Reject</button>
-                <button className="success" onClick={() => changeStatus(id, 'approved')}>
+                <button className="danger" onClick={() => changeStatus(id, 1)}>Reject</button>
+                <button className="success" onClick={() => changeStatus(id, 2)}>
                     Approve <Check color="var(--quat-color-dark)" size={16} />
                 </button>
             </div>

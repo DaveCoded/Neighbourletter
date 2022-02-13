@@ -12,34 +12,34 @@
             "location": "Taffeta Farmhouse (where the pig pen used to be)",
             "description": "We're hiring a pizza van, some carnival games and setting up some hay bales round our beautiful fire pits. Family friendly. Mulled wine for adults, soft drinks for the kiddies!",
             "submitter": "Farmer John",
-            "status": "pending"
+            "status": 0
         },
         {
             "id": 2,
             "category": "recommendation",
-            "name": "Mama Rose's Cafe",
+            "title": "Mama Rose's Cafe",
             "location": "123 Fake Street",
             "description": "You won't believe the things these people do to muffins.",
             "submitter": "Parker Nosey",
-            "status": "pending"
+            "status": 0
         },
         {
             "id": 3,
             "category": "recommendation",
-            "name": "Bruce's Hardware",
+            "title": "Bruce's Hardware",
             "location": "404 Pretend Street",
             "description": "This man knows his way around a hammer, sickle, and sword. A sight not to be missed",
             "submitter": "Chris Soint",
-            "status": "pending"
+            "status": 0
         },
         {
             "id": 4,
             "category": "recommendation",
-            "name": "Tory's Laundromat",
+            "title": "Tory's Laundromat",
             "location": "10 Downing Street",
             "description": "These folks know how to get the stains out of everything; your shirts, your carpet, your reputation.",
             "submitter": "Boris Bohnson",
-            "status": "pending"
+            "status": 0
         },
         {
             "id": 5,
@@ -49,26 +49,54 @@
             "location": "Taffeta Farmhouse (where the pig pen used to be)",
             "description": "We're hiring a pizza van, some carnival games and setting up some hay bales round our beautiful fire pits. Family friendly. Mulled wine for adults, soft drinks for the kiddies!",
             "submitter": "Farmer John",
-            "status": "pending"
+            "status": 0
         },
         {
             "id": 6,
             "category": "event",
-            "title": "Village fete",
-            "time": "15:00, 01/03/22",
-            "location": "Taffeta Farmhouse (where the pig pen used to be)",
-            "description": "We're hiring a pizza van, some carnival games and setting up some hay bales round our beautiful fire pits. Family friendly. Mulled wine for adults, soft drinks for the kiddies!",
+            "title": "Chili cookoff",
+            "time": "13:00, 02/04/22",
+            "location": "Taffeta Farmhouse (main farmhouse)",
+            "description": "My wife doesn't agree that my chili is the best in town. Bring your best efforts and let's prove her right!",
             "submitter": "Farmer John",
-            "status": "pending"
+            "status": 0
         },
         {
             "id": 7,
             "category": "recommendation",
-            "name": "Mama Rose's Cafe",
+            "title": "Mama Rose's Cafe",
             "location": "123 Fake Street",
             "description": "You won't believe the things these people do to muffins.",
             "submitter": "Parker Nosey",
-            "status": "pending"
+            "status": 0
+        },
+        {
+            "id": 8,
+            "category": "event",
+            "title": "Village Pantomime",
+            "location": "The Palace Street Theatre",
+            "description": "We're doing an extra month of the panto. BACK BY POPULAR DEMAND!",
+            "submitter": "Dame Lawn Bawls",
+            "status": 0
+        },
+        {
+            "id": 9,
+            "category": "event",
+            "title": "Baseball card swap meet",
+            "time": "11:30, 10/03/22",
+            "location": "Lidl car park",
+            "description": "I'm looking for my DiMaggio. Will swap one of my spare Babe Ruths",
+            "submitter": "Sandy Cheeks",
+            "status": 0
+        },
+        {
+            "id": 10,
+            "category": "recommendation",
+            "title": "Tony's Art Gallery",
+            "location": "45 Fresh Juice Lane",
+            "description": "I would definitely recommend going, obviously, because like, it's amazing that Tony's got a hold of 2 genuine Van Gogh's and that, but it does raise a few questions, dunnit?.",
+            "submitter": "Clarence Turpentine",
+            "status": 0
         }
     ]
 }
