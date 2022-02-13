@@ -7,7 +7,7 @@ export default function NewsletterIssue({
     status,
     numEvents,
     numRecommendations,
-    scheduledTime,
+    scheduledTime
 }) {
     return (
         <div className={styles.main}>
@@ -38,9 +38,9 @@ export default function NewsletterIssue({
             />
             <div className={styles.listings}>
                 {/* num of events */}
-                <p>{numEvents} Events</p>
+                <p><span>{numEvents}</span> Events</p>
                 {/* num of recommendations */}
-                <p>{numRecommendations} Recommendations</p>
+                <p><span>{numRecommendations}</span> Recommendations</p>
             </div>
         </div >
     );

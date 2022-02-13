@@ -3,6 +3,7 @@ import { dummyData } from '../dummydata.js';
 import SubmissionList from '../components/SubmissionList';
 import styles from '../styles/Dashboard.module.css';
 import NewsletterIssue from '../components/NewsletterIssue';
+import { parseResponse } from '../utils/parse.js';
 
 export const BASE_URL = 'http://192.168.1.154:5000';
 
@@ -51,22 +52,14 @@ export default function Dashboard() {
         getSubmissions();
     };
 
-    const parseResponse = (subs) => {
-        if (!subs) return;
-        return subs.map(sub => ({
-            submitter: sub.submitter_email,
-            id: sub.id,
-            status: sub.submission_status,
-            newsletterId: sub.newsletter_id,
-            ...JSON.parse(sub.submission_content)
-        }))
-    }
-
     useEffect(() => {
         const getSubmissions = async () => {
             await fetch(`${BASE_URL}/submissions/list?status=1`)
                 .then(data => data.json())
-                .then(data => setSubmissions(parseResponse(data.submissions)));
+                .then(data => {
+                    console.log(data.submissions)
+                    setSubmissions(parseResponse(data.submissions))
+                });
         }
         getSubmissions();
     }, []);
@@ -93,7 +86,7 @@ export default function Dashboard() {
     ) || [];
 
     const resetToPendingStatus = async () => {
-        await changeStatus(6, 0);
+        await changeStatus(13, 0);
     }
 
     const { numEvents, numRecommendations } = getSubmissionCounts(submissions);

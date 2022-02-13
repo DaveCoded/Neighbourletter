@@ -1,26 +1,25 @@
 import Link from 'next/link';
 import styles from '../styles/Newsletter.module.css'
-import jsondata from '../dummy-data.json';
+import { useState, useEffect } from 'react'
+import { parseResponse } from '../utils/parse.js'
+import { BASE_URL } from './dashboard'
+import NewsletterItem from '../components/NewsletterItem'
 
 export default function Newsletter() {
+    const [submissions, setSubmissions] = useState([]);
+
     // get submissions
-    const submissions = jsondata.submissions;
-    // filter for approved status
-    const approvedSubmissions = submissions.filter(
-        (sub) => sub.status === 'approved'
-    );
-    // create an array of arrays, where each nested array has submissions of the same category
-    const groupedSubmissions = approvedSubmissions.reduce((acc, sub) => {
-        if (acc[sub.category]) {
-            acc[sub.category].push(sub);
-        } else {
-            acc[sub.category] = [sub];
+    useEffect(() => {
+        const getSubmissions = async () => {
+            await fetch(`${BASE_URL}/submissions/list?status=1`)
+                .then(data => data.json())
+                .then(data => {
+                    setSubmissions(parseResponse(data.submissions).filter(sub => sub.status === 2))
+                    console.log(parseResponse(data.submissions))
+                });
         }
-        return acc;
-    }, {});
-
-
-    console.log({ groupedSubmissions });
+        getSubmissions();
+    }, []);
 
     return (
         <main className={styles.main}>
@@ -37,7 +36,12 @@ export default function Newsletter() {
                 <h1>Review issue 4</h1>
             </header>
             <section className={styles.newsletter}>
+                <p>Welcome to the NW4 Newsletter! We've had plenty of great submissions over the past two weeks. Keep them coming! It's great to hear your news and to connect with our lovely neighbours.</p>
+                <hr style={{ marginTop: '3rem' }}></hr>
                 {/* Loop through outer array, and output status */}
+                {submissions.map((submission) => (
+                    <NewsletterItem key={submission.id} submission={submission} />
+                ))}
                 {/* Loop through submissions and output content */}
             </section>
         </main>

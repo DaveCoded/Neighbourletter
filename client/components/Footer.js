@@ -6,7 +6,7 @@ export default function Footer() {
 
     return (
         <footer className={styles.footer}>
-            &copy; {year} NeighbourLetter
+            &copy; {year} Neighbourletter
         </footer>
     );
 }
