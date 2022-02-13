@@ -62,6 +62,15 @@ export default function Newsletter() {
                         }
                     </>
                 ))}
+                <button
+                    className='success'
+                    style={{ marginLeft: 'auto', marginTop: '2.5rem' }}
+                    onClick={async () => {
+                        await fetch(`${BASE_URL}/submissions/email`)
+                    }}
+                >
+                    Send
+                </button>
             </section>
         </main >
     );
