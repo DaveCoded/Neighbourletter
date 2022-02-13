@@ -27,7 +27,6 @@ const getSubmissionCounts = (submissions) => {
 
 export default function Dashboard() {
     const { newsletter } = dummyData;
-    // Put dummy submissions in state for now. Fetch from database later
     const [submissions, setSubmissions] = useState([]);
 
     const changeStatus = async (subId, status) => {
@@ -64,30 +63,14 @@ export default function Dashboard() {
         getSubmissions();
     }, []);
 
-    // await fetch(`${BASE_URL}/submissions/create`, {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(
-    //         {
-    //             content: content,
-    //             submitter_email: "fake@fake.com",
-    //             status: 0,
-    //             newsletter_id: 1
-    //         }
-    //     )
-    // })
-    // }
-
     // Only show pending submissions (not approved, or rejected) in dashboard list
     const pendingSubmissions = submissions && submissions.filter(
         (sub) => sub.status === 0
     ) || [];
 
-    const resetToPendingStatus = async () => {
-        await changeStatus(4, 0);
-    }
+    // const resetToPendingStatus = async () => {
+    //     await changeStatus(4, 0);
+    // }
 
     const { numEvents, numRecommendations } = getSubmissionCounts(submissions);
 
@@ -97,9 +80,9 @@ export default function Dashboard() {
                 <h2 className={styles.sectionHeader}>Community Submissions</h2>
                 <SubmissionList submissions={pendingSubmissions} changeStatus={changeStatus} />
                 {/* TODO: Button for resetting status */}
-                <button onClick={resetToPendingStatus}>
+                {/* <button onClick={resetToPendingStatus}>
                     Reset to pending status
-                </button>
+                </button> */}
             </section>
             <section className={styles.mainSection}>
                 <h2 className={styles.sectionHeader}>Upcoming Issue</h2>

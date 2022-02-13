@@ -4,7 +4,6 @@ import styles from '../styles/NewsletterIssue.module.css';
 import { Eye } from 'react-feather';
 
 export default function NewsletterIssue({
-    status,
     numEvents,
     numRecommendations,
     scheduledTime
@@ -37,9 +36,7 @@ export default function NewsletterIssue({
                 style={{ width: '100%', background: 'var(--gray-400)', height: '1px' }}
             />
             <div className={styles.listings}>
-                {/* num of events */}
                 <p><span>{numEvents}</span> Events</p>
-                {/* num of recommendations */}
                 <p><span>{numRecommendations}</span> Recommendations</p>
             </div>
         </div >
