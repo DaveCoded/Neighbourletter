@@ -8,7 +8,7 @@ export default function SubmissionList({ submissions, changeStatus }) {
             case 'event':
                 return <Event key={index} title={sub.title} description={sub.description} submitter={sub.submitter} changeStatus={changeStatus} id={sub.id} />
             case 'recommendation':
-                return <Recommendation key={index} name={sub.name} description={sub.description} location={sub.location} submitter={sub.submitter} changeStatus={changeStatus} id={sub.id} />
+                return <Recommendation key={index} title={sub.title} description={sub.description} location={sub.location} submitter={sub.submitter} changeStatus={changeStatus} id={sub.id} />
             default:
                 return null
         }
