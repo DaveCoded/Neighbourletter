@@ -86,7 +86,7 @@ export default function Dashboard() {
     ) || [];
 
     const resetToPendingStatus = async () => {
-        await changeStatus(13, 0);
+        await changeStatus(4, 0);
     }
 
     const { numEvents, numRecommendations } = getSubmissionCounts(submissions);

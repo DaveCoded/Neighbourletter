@@ -8,7 +8,6 @@ import NewsletterItem from '../components/NewsletterItem'
 export default function Newsletter() {
     const [submissions, setSubmissions] = useState([]);
 
-    // get submissions
     useEffect(() => {
         const getSubmissions = async () => {
             await fetch(`${BASE_URL}/submissions/list?status=1`)
@@ -20,6 +19,19 @@ export default function Newsletter() {
         }
         getSubmissions();
     }, []);
+
+    const sortSubmissions = () => {
+        const recommendations = [];
+        const events = [];
+        submissions.forEach(sub => {
+            if (sub.category === 'recommendation') {
+                recommendations.push(sub);
+            } else {
+                events.push(sub);
+            }
+        })
+        return [recommendations, events];
+    }
 
     return (
         <main className={styles.main}>
@@ -38,12 +50,19 @@ export default function Newsletter() {
             <section className={styles.newsletter}>
                 <p>Welcome to the NW4 Newsletter! We've had plenty of great submissions over the past two weeks. Keep them coming! It's great to hear your news and to connect with our lovely neighbours.</p>
                 <hr style={{ marginTop: '3rem' }}></hr>
-                {/* Loop through outer array, and output status */}
-                {submissions.map((submission) => (
-                    <NewsletterItem key={submission.id} submission={submission} />
+                {sortSubmissions(submissions).map((category) => (
+                    <>
+                        <h2 key={category[0].category}>
+                            {category[0].category === 'recommendation' ? 'Recommendations' : 'Events'}
+                        </h2>
+                        {
+                            category.map((submission) => (
+                                <NewsletterItem key={submission.id} submission={submission} />
+                            ))
+                        }
+                    </>
                 ))}
-                {/* Loop through submissions and output content */}
             </section>
-        </main>
+        </main >
     );
 }
